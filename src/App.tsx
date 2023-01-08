@@ -2,7 +2,7 @@ import React from 'react';
 import {Product} from "./components/Product";
 import {useProducts} from "./hooks/useProducts";
 import {Loader} from "./components/Loader";
-import {Error} from "./components/Error";
+import {ErrorMessage} from "./components/ErrorMessage";
 import {Modal} from "./components/Modal";
 import {CreateProduct} from "./components/CreateProduct";
 
@@ -11,8 +11,12 @@ function App() {
     return (
         <div className="container mx-auto max-w-2xl pt-5">
             {loading && <Loader/>}
-            {error && <Error error={error}/>}
+            {error && <ErrorMessage error={error}/>}
             {products.map(product => <Product product={product} key={product.id}/>)}
+
+            <Modal title="Create new product">
+                <CreateProduct/>
+            </Modal>
         </div>
     )
 }
