@@ -55,7 +55,7 @@ export function CreateProduct({ onCreate}: CreateProductProps) {
 
             {error && <ErrorMessage error={error}/> }
 
-            <button type="submit" className="py-2 px-4 border bg-yellow-400 hover:text-white">Create</button>
+            `<button type="submit" className="py-2 px-4 border bg-yellow-400 hover:text-white">Create</button>`
         </form>
     )
 }
